@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <script>
+    if (window.self !== window.top) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      window.addEventListener('message', function(e) {
+        if (e.data && e.data.type === 'poli-theme') {
+          document.documentElement.setAttribute('data-theme', e.data.light ? 'light' : 'dark');
+        }
+      });
+    }
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Build and print a professional tattoo flash sheet. Add designs with style, size, and price — then generate a printable client-ready sheet or export a CSV for your records.">
+  <title>Tattoo Flash Sheet Builder | Poli International</title>
+  <link rel="stylesheet" href="/tools/flash-sheet-builder/css/style.css">
+</head>
+<body>
+<div class="tool-wrapper">
+
+  <header class="tool-header">
+    <div class="tool-header__badge">📋 Flash Sheet Builder</div>
+    <h1>Tattoo Flash Sheet Builder</h1>
+    <p>Add your flash designs with price and details, then print a client-ready sheet or export a CSV for your records.</p>
+  </header>
+
+  <!-- Artist info -->
+  <div class="calc-card">
+    <h2 class="card-heading">Artist Info</h2>
+    <div class="form-grid-3">
+      <div class="form-field">
+        <label for="artist-name">Artist / Studio Name</label>
+        <input type="text" id="artist-name" class="input-field" placeholder="Your name or studio">
+      </div>
+      <div class="form-field">
+        <label for="artist-contact">Contact / Instagram</label>
+        <input type="text" id="artist-contact" class="input-field" placeholder="@handle or phone">
+      </div>
+      <div class="form-field">
+        <label for="sheet-date">Sheet Date</label>
+        <input type="date" id="sheet-date" class="input-field">
+      </div>
+    </div>
+  </div>
+
+  <!-- Add design -->
+  <div class="calc-card">
+    <h2 class="card-heading">Add Flash Design</h2>
+    <div class="form-grid">
+      <div class="form-field">
+        <label for="design-name">Design Name</label>
+        <input type="text" id="design-name" class="input-field" placeholder="e.g. Serpent Rose">
+      </div>
+      <div class="form-field">
+        <label for="design-style">Style</label>
+        <select id="design-style" class="input-field">
+          <option value="">Select…</option>
+          <option>Traditional</option>
+          <option>Neo-Traditional</option>
+          <option>Blackwork</option>
+          <option>Fine Line</option>
+          <option>Geometric</option>
+          <option>Watercolour</option>
+          <option>Realism</option>
+          <option>Japanese</option>
+          <option>Tribal</option>
+          <option>Script / Lettering</option>
+          <option>Minimalist</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="design-size">Size</label>
+        <select id="design-size" class="input-field">
+          <option value="">Select…</option>
+          <option>Micro (under 3 cm)</option>
+          <option>Small (3–5 cm)</option>
+          <option>Medium (5–10 cm)</option>
+          <option>Large (10–20 cm)</option>
+          <option>XL (20 cm+)</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="design-price">Price (£)</label>
+        <input type="number" id="design-price" class="input-field" placeholder="80" min="0" step="5">
+      </div>
+      <div class="form-field full-width">
+        <label for="design-notes">Notes</label>
+        <input type="text" id="design-notes" class="input-field" placeholder="Colour / B&amp;G / placement / additional info">
+      </div>
+    </div>
+    <button id="add-btn" class="primary-btn">Add Design</button>
+  </div>
+
+  <!-- Design list -->
+  <div id="list-section" style="display:none">
+    <div class="list-header">
+      <h2 class="card-heading">Flash Designs <span id="piece-count" class="count-badge"></span></h2>
+      <div class="list-actions">
+        <button id="print-btn" class="secondary-btn">Preview &amp; Print</button>
+        <button id="export-btn" class="secondary-btn">Export CSV</button>
+        <button id="clear-btn" class="danger-btn">Clear All</button>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table id="designs-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Design</th>
+            <th>Style</th>
+            <th>Size</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Notes</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="designs-body"></tbody>
+      </table>
+    </div>
+    <div class="summary-strip" id="summary-strip"></div>
+  </div>
+
+  <div id="empty-state" class="empty-state">No flash designs added yet. Fill in the form above to get started.</div>
+
+</div>
+
+<!-- Print modal -->
+<div id="print-modal" class="modal" style="display:none">
+  <div class="modal-inner">
+    <div class="modal-controls no-print">
+      <button id="do-print-btn" class="primary-btn">Print</button>
+      <button id="close-modal-btn" class="secondary-btn">Close</button>
+    </div>
+    <div id="print-preview" class="print-preview"></div>
+  </div>
+</div>
+
+<script src="/tools/flash-sheet-builder/js/app.js"></script>
+</body>
+</html>
