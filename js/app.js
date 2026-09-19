@@ -11,7 +11,11 @@ const printPreview= document.getElementById('print-preview');
 const doPrintBtn  = document.getElementById('do-print-btn');
 const closeModal  = document.getElementById('close-modal-btn');
 
-document.getElementById('sheet-date').value = new Date().toISOString().slice(0, 10);
+function todayLocal() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+document.getElementById('sheet-date').value = todayLocal();
 
 function load() { return JSON.parse(localStorage.getItem(KEY) || '[]'); }
 function save(d) { localStorage.setItem(KEY, JSON.stringify(d)); }
