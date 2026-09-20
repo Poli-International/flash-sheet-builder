@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Build and print a professional tattoo flash sheet with your own artwork, customizable pricing, deposits, and status tracking. Print-ready or export to CSV.">
+  <meta property="og:title" content="Tattoo Flash Sheet Builder | Poli International">
+  <meta property="og:description" content="Build and print a professional tattoo flash sheet with your own artwork, customizable pricing, deposits, and status tracking. Print-ready or export to CSV.">
+  <title data-i18n="app.pageTitle">Tattoo Flash Sheet Builder | Poli International</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <link rel="manifest" href="./manifest.webmanifest">
   <script>
     if (window.self !== window.top) {
       document.documentElement.setAttribute('data-theme', 'dark');
@@ -12,174 +21,340 @@
       });
     }
   </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Build and print a professional tattoo flash sheet. Add designs with style, size, and price — then generate a printable client-ready sheet or export a CSV for your records.">
-  <title>Tattoo Flash Sheet Builder | Poli International</title>
-  <link rel="stylesheet" href="/tools/flash-sheet-builder/css/style.css">
-  <link rel="stylesheet" href="/tools/shared/theme.css">
-<script type='application/ld+json'>
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Tattoo Flash Sheet Builder",
-  "url": "https://poliinternational.com/tools/flash-sheet-builder/",
-  "description": "Build a professional tattoo flash sheet in minutes. Add designs with style, size, price, and notes, then print or export a CSV for your studio.",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "browserRequirements": "Requires JavaScript. Requires HTML5.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "Poli International",
-    "url": "https://poliinternational.com"
-  },
-  "creator": {
-    "@type": "Organization",
-    "name": "Poli International",
-    "url": "https://poliinternational.com"
-  },
-  "maintainer": {
-    "@type": "Organization",
-    "name": "Poli International",
-    "url": "https://poliinternational.com"
-  },
-  "dateModified": "2026-07-01",
-  "license": "https://opensource.org/licenses/MIT",
-  "isAccessibleForFree": true
-}
-</script>
-
-  <script src="/js/input-guards.js"></script>
-<link rel="stylesheet" href="/tools/shared/print.css" media="print">
-  <link rel="stylesheet" href="/tools/shared/a11y.css">
-  </head>
+</head>
 <body>
-<div class="tool-wrapper">
+<div class="tool-wrapper no-print">
+
+  <!-- Top bar with language selector and tools links -->
+  <div class="top-bar">
+    <div class="lang-control">
+      <label for="langSelect" data-i18n="lang.label">Language:</label>
+      <select id="langSelect" class="lang-select">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="it">Italiano</option>
+        <option value="pt">Português</option>
+        <option value="nl">Nederlands</option>
+      </select>
+    </div>
+    <div class="related-tools">
+      <span data-i18n="related.title">Poli International Tools:</span>
+      <a href="https://poliinternational.com/studio-pricing-benchmark/" target="_top" class="related-link" data-i18n="related.pricing">Pricing Benchmark</a>
+      <a href="https://poliinternational.com/consent-form-generator/" target="_top" class="related-link" data-i18n="related.consent">Consent Generator</a>
+    </div>
+  </div>
 
   <header class="tool-header">
-    <div class="tool-header__badge">📋 Flash Sheet Builder</div>
-    <h1>Tattoo Flash Sheet Builder</h1>
-    <p>Add your flash designs with price and details, then print a client-ready sheet or export a CSV for your records.</p>
+    <div class="tool-header__badge" data-i18n="app.badge">Flash Sheet Builder</div>
+    <h1 data-i18n="app.title">Tattoo Flash Sheet Builder</h1>
+    <p data-i18n="app.subtitle">Add your flash designs with price, size, and artwork, then generate a printable client-ready sheet or counter price list.</p>
   </header>
 
-  <!-- Artist info -->
+  <!-- Storage Budget Progress Meter -->
+  <div class="storage-card">
+    <div class="storage-header">
+      <span data-i18n="storage.title">Browser Storage Budget</span>
+      <span id="storageBarText">0 KB / ~5,000 KB (0%)</span>
+    </div>
+    <div class="storage-bar-bg">
+      <div id="storageBarFill" class="storage-bar-fill"></div>
+    </div>
+    <div id="storageAlert" class="storage-alert" data-i18n="storage.warning">
+      Browser storage is over 75% full. Consider exporting a backup or clearing unused sheets.
+    </div>
+  </div>
+
+  <!-- Sheet Switcher & Management Card -->
   <div class="calc-card">
-    <h2 class="card-heading">Artist Info</h2>
+    <div class="sheet-mgmt-bar">
+      <div class="sheet-select-wrap">
+        <label for="sheetSelect" class="card-heading mb-0" data-i18n="sheet.switchLabel">Active Sheet:</label>
+        <select id="sheetSelect" class="input-field sheet-select"></select>
+      </div>
+      <div class="sheet-actions">
+        <button id="newSheetBtn" class="primary-btn" data-i18n="sheet.newBtn">+ New Sheet</button>
+        <button id="duplicateSheetBtn" class="secondary-btn" data-i18n="sheet.duplicateBtn">Duplicate</button>
+        <button id="deleteSheetBtn" class="danger-btn" data-i18n="sheet.deleteBtn">Delete</button>
+        <button id="exportJsonBtn" class="subtle-btn" data-i18n="sheet.exportBackup">Export Backup</button>
+        <button id="importJsonBtn" class="subtle-btn" data-i18n="sheet.importBackup">Import Backup</button>
+        <input type="file" id="jsonFileInput" accept=".json" hidden>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sheet Settings Card -->
+  <div class="calc-card">
+    <h2 class="card-heading" data-i18n="settings.heading">Sheet Settings &amp; Identity</h2>
+    <div class="form-grid-4">
+      <div class="form-field">
+        <label for="sheetTitle" data-i18n="settings.sheetTitle">Sheet Title</label>
+        <input type="text" id="sheetTitle" class="input-field" placeholder="Halloween Flash Day" data-i18n-placeholder="settings.sheetTitlePlaceholder">
+      </div>
+      <div class="form-field">
+        <label for="artistName" data-i18n="settings.artist">Artist / Studio Name</label>
+        <input type="text" id="artistName" class="input-field" placeholder="Artist name or studio" data-i18n-placeholder="settings.artistPlaceholder">
+      </div>
+      <div class="form-field">
+        <label for="artistContact" data-i18n="settings.contact">Contact / Instagram</label>
+        <input type="text" id="artistContact" class="input-field" placeholder="@handle or phone" data-i18n-placeholder="settings.contactPlaceholder">
+      </div>
+      <div class="form-field">
+        <label for="sheetDate" data-i18n="settings.date">Sheet Date</label>
+        <input type="date" id="sheetDate" class="input-field">
+      </div>
+    </div>
     <div class="form-grid-3">
       <div class="form-field">
-        <label for="artist-name">Artist / Studio Name</label>
-        <input type="text" id="artist-name" class="input-field" placeholder="Your name or studio">
+        <label for="currencySelect" data-i18n="settings.currency">Currency</label>
+        <select id="currencySelect" class="input-field">
+          <option value="£">£ (GBP)</option>
+          <option value="$">$ (USD)</option>
+          <option value="€">€ (EUR)</option>
+          <option value="A$">A$ (AUD)</option>
+          <option value="C$">C$ (CAD)</option>
+          <option value="¥">¥ (JPY)</option>
+          <option value="CHF">CHF (Swiss Franc)</option>
+          <option value="kr">kr (SEK/NOK/DKK)</option>
+          <option value="R$">R$ (BRL)</option>
+        </select>
       </div>
       <div class="form-field">
-        <label for="artist-contact">Contact / Instagram</label>
-        <input type="text" id="artist-contact" class="input-field" placeholder="@handle or phone">
+        <label for="paperSizeSelect" data-i18n="settings.paperSize">Paper Format</label>
+        <select id="paperSizeSelect" class="input-field">
+          <option value="a4" data-i18n="settings.paperA4">A4 (210 × 297 mm)</option>
+          <option value="letter" data-i18n="settings.paperLetter">US Letter (8.5 × 11 in)</option>
+        </select>
       </div>
       <div class="form-field">
-        <label for="sheet-date">Sheet Date</label>
-        <input type="date" id="sheet-date" class="input-field">
+        <label for="gridColumnsSelect" data-i18n="settings.gridCols">Grid Columns</label>
+        <select id="gridColumnsSelect" class="input-field">
+          <option value="2" data-i18n="settings.cols2">2 Columns</option>
+          <option value="3" selected data-i18n="settings.cols3">3 Columns</option>
+          <option value="4" data-i18n="settings.cols4">4 Columns</option>
+        </select>
       </div>
     </div>
   </div>
 
-  <!-- Add design -->
+  <!-- Add Flash Design Form -->
+  <div class="calc-card" id="designFormCard">
+    <h2 class="card-heading" data-i18n="form.heading">Add Flash Design</h2>
+    <form id="designForm">
+      <!-- Image Dropzone -->
+      <div class="form-field mb-1">
+        <label data-i18n="form.imageLabel">Design Artwork (Optional - stays on device only)</label>
+        <div id="imageDropzone" class="image-dropzone">
+          <div id="dropzoneContent">
+            <svg class="dropzone-icon" viewBox="0 0 24 24">
+              <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
+            </svg>
+            <div class="dropzone-text" data-i18n="form.dropzoneText">Click or drag &amp; drop design photo</div>
+            <div class="dropzone-hint" data-i18n="form.dropzoneHint">Phone photos automatically scaled, compressed and stripped of all EXIF metadata.</div>
+          </div>
+          <div id="imagePreviewWrap" class="image-preview-wrap" hidden>
+            <img id="previewThumbImg" class="preview-thumb" alt="Preview" data-i18n-alt="form.imageAlt">
+            <div class="preview-actions">
+              <button type="button" id="changeImageBtn" class="subtle-btn" data-i18n="form.changeImageBtn">Change</button>
+              <button type="button" id="removeImageBtn" class="danger-btn" data-i18n="form.removeImageBtn">Remove</button>
+            </div>
+          </div>
+          <input type="file" id="imageFileInput" accept="image/*">
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="designName" data-i18n="form.name">Design Name *</label>
+          <input type="text" id="designName" class="input-field" placeholder="e.g. Dagger Heart" data-i18n-placeholder="form.namePlaceholder" required>
+        </div>
+        <div class="form-field">
+          <label for="designStyle" data-i18n="form.style">Style</label>
+          <select id="designStyle" class="input-field">
+            <option value="" data-i18n="form.selectEmpty">Select…</option>
+            <option value="traditional" data-i18n="style.traditional">Traditional</option>
+            <option value="neo_traditional" data-i18n="style.neo_traditional">Neo-Traditional</option>
+            <option value="japanese" data-i18n="style.japanese">Japanese</option>
+            <option value="blackwork" data-i18n="style.blackwork">Blackwork</option>
+            <option value="fine_line" data-i18n="style.fine_line">Fine Line</option>
+            <option value="realism" data-i18n="style.realism">Realism</option>
+            <option value="tribal" data-i18n="style.tribal">Tribal</option>
+            <option value="lettering" data-i18n="style.lettering">Script / Lettering</option>
+            <option value="illustrative" data-i18n="style.illustrative">Illustrative</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-grid-4">
+        <div class="form-field">
+          <label for="designSize" data-i18n="form.size">Size</label>
+          <select id="designSize" class="input-field">
+            <option value="" data-i18n="form.selectEmpty">Select…</option>
+            <option value="palm" data-i18n="size.palm">Palm (~8-10 cm)</option>
+            <option value="hand" data-i18n="size.hand">Hand (~12-15 cm)</option>
+            <option value="forearm" data-i18n="size.forearm">Forearm (~15-20 cm)</option>
+            <option value="torso" data-i18n="size.torso">Torso (~20-30 cm)</option>
+            <option value="back_piece" data-i18n="size.back_piece">Back Piece (30+ cm)</option>
+            <option value="small" data-i18n="size.small">Small (under 5 cm)</option>
+            <option value="custom" data-i18n="size.custom">Custom Size</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="designPrice" id="priceLabel" data-i18n="form.price">Price</label>
+          <input type="number" id="designPrice" class="input-field" min="0" step="1" placeholder="120">
+        </div>
+        <div class="form-field">
+          <label for="designDeposit" id="depositLabel" data-i18n="form.deposit">Deposit</label>
+          <input type="number" id="designDeposit" class="input-field" min="0" step="1" placeholder="40">
+        </div>
+        <div class="form-field">
+          <label for="designTime" data-i18n="form.sittingTime">Est. Sitting Time</label>
+          <input type="text" id="designTime" class="input-field" placeholder="1.5 hrs" data-i18n-placeholder="form.timePlaceholder">
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="designStatus" data-i18n="form.status">Availability Status</label>
+          <select id="designStatus" class="input-field">
+            <option value="available" data-i18n="form.statusAvailable">Available (Unclaimed one-off)</option>
+            <option value="claimed" data-i18n="form.statusClaimed">Claimed (One-off taken)</option>
+            <option value="repeatable" data-i18n="form.statusRepeatable">Repeatable (Multiple tattoos permitted)</option>
+          </select>
+        </div>
+        <div class="form-field form-field-checkbox">
+          <label class="checkbox-label">
+            <input type="checkbox" id="designSpan">
+            <span data-i18n="form.spanLabel">Centerpiece: take 2 grid cells wide</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-field full-width mb-1">
+        <label for="designNotes" data-i18n="form.notes">Notes / Placement</label>
+        <input type="text" id="designNotes" class="input-field" placeholder="Arms/legs only, black &amp; grey or color" data-i18n-placeholder="form.notesPlaceholder">
+      </div>
+
+      <div class="btn-group">
+        <button type="submit" id="designSubmitBtn" class="primary-btn" data-i18n="form.addBtn">Add to Flash Sheet</button>
+        <button type="button" id="cancelEditBtn" class="secondary-btn" data-i18n="form.cancelBtn" hidden>Cancel Edit</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Designs List Card -->
   <div class="calc-card">
-    <h2 class="card-heading">Add Flash Design</h2>
-    <div class="form-grid">
-      <div class="form-field">
-        <label for="design-name">Design Name</label>
-        <input type="text" id="design-name" class="input-field" placeholder="e.g. Serpent Rose">
-      </div>
-      <div class="form-field">
-        <label for="design-style">Style</label>
-        <select id="design-style" class="input-field">
-          <option value="">Select…</option>
-          <option>Traditional</option>
-          <option>Neo-Traditional</option>
-          <option>Blackwork</option>
-          <option>Fine Line</option>
-          <option>Geometric</option>
-          <option>Watercolour</option>
-          <option>Realism</option>
-          <option>Japanese</option>
-          <option>Tribal</option>
-          <option>Script / Lettering</option>
-          <option>Minimalist</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="form-field">
-        <label for="design-size">Size</label>
-        <select id="design-size" class="input-field">
-          <option value="">Select…</option>
-          <option>Micro (under 3 cm)</option>
-          <option>Small (3–5 cm)</option>
-          <option>Medium (5–10 cm)</option>
-          <option>Large (10–20 cm)</option>
-          <option>XL (20 cm+)</option>
-        </select>
-      </div>
-      <div class="form-field">
-        <label for="design-price">Price (£)</label>
-        <input type="number" id="design-price" class="input-field" placeholder="80" min="0" step="5">
-      </div>
-      <div class="form-field full-width">
-        <label for="design-notes">Notes</label>
-        <input type="text" id="design-notes" class="input-field" placeholder="Colour / B&amp;G / placement / additional info">
+    <div class="card-header-bar">
+      <h2 class="card-heading">
+        <span data-i18n="list.heading">Sheet Designs</span>
+        <span id="listCountBadge" class="count-badge" data-i18n="list.countBadgeZero">0 designs</span>
+      </h2>
+      <div class="view-tabs">
+        <button type="button" class="view-tab active" data-view="table" data-i18n="list.tableView">Table View</button>
+        <button type="button" class="view-tab" data-view="arrange" data-i18n="list.arrangeView">Drag to Arrange</button>
       </div>
     </div>
-    <button id="add-btn" class="primary-btn">Add Design</button>
-  </div>
 
-  <!-- Design list -->
-  <div id="list-section" style="display:none">
-    <div class="list-header">
-      <h2 class="card-heading">Flash Designs <span id="piece-count" class="count-badge"></span></h2>
-      <div class="list-actions">
-        <button id="print-btn" class="secondary-btn">Preview &amp; Print</button>
-        <button id="export-btn" class="secondary-btn">Export CSV</button>
-        <button id="clear-btn" class="danger-btn">Clear All</button>
+    <!-- Summary strip -->
+    <div id="summaryStrip" class="summary-strip"></div>
+
+    <!-- Actions bar -->
+    <div class="list-actions mb-1">
+      <button type="button" id="previewSheetBtn" class="primary-btn" data-i18n="list.printSheetBtn">Preview &amp; Print Flash Sheet</button>
+      <button type="button" id="previewPriceListBtn" class="secondary-btn" data-i18n="list.printPriceListBtn">Print Counter Price List</button>
+      <button type="button" id="exportCsvBtn" class="subtle-btn" data-i18n="list.exportCsvBtn">Export CSV</button>
+      <button type="button" id="clearAllBtn" class="danger-btn" data-i18n="list.clearAllBtn">Clear All</button>
+    </div>
+
+    <!-- Table view -->
+    <div id="tableSection">
+      <div class="table-header-bar" id="tableHeaderBar">
+        <div class="table-header-title">
+          <span data-i18n="table.viewTitle">Design Records</span>
+        </div>
+        <div class="table-sort-control">
+          <label for="tableSortSelect" class="table-sort-label" data-i18n="table.sortLabel">Sort by:</label>
+          <select id="tableSortSelect" class="table-sort-select">
+            <option value="manual" data-i18n="sort.manual">Default (Sheet Order)</option>
+            <option value="price-asc" data-i18n="sort.priceAsc">Price: Low to High</option>
+            <option value="price-desc" data-i18n="sort.priceDesc">Price: High to Low</option>
+            <option value="name-asc" data-i18n="sort.nameAsc">Name: A to Z</option>
+            <option value="name-desc" data-i18n="sort.nameDesc">Name: Z to A</option>
+          </select>
+        </div>
+      </div>
+      <div class="table-wrap" id="tableWrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th data-i18n="table.colArtwork">Artwork</th>
+              <th data-i18n="table.colName">Design Name</th>
+              <th data-i18n="table.colStyle">Style</th>
+              <th data-i18n="table.colSize">Size</th>
+              <th data-i18n="table.colPrice">Price</th>
+              <th data-i18n="table.colDeposit">Deposit</th>
+              <th data-i18n="table.colTime">Time</th>
+              <th data-i18n="table.colStatus">Status</th>
+              <th data-i18n="table.colSpan">Span</th>
+              <th data-i18n="table.colNotes">Notes</th>
+              <th data-i18n="table.colActions">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="designsTableBody"></tbody>
+        </table>
       </div>
     </div>
-    <div class="table-wrap">
-      <table id="designs-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Design</th>
-            <th>Style</th>
-            <th>Size</th>
-            <th>Price</th>
-            <th>Status</th>
-            <th>Notes</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="designs-body"></tbody>
-      </table>
-    </div>
-    <div class="summary-strip" id="summary-strip"></div>
-  </div>
 
-  <div id="empty-state" class="empty-state">No flash designs added yet. Fill in the form above to get started.</div>
+    <!-- Drag to Arrange view -->
+    <div id="arrangeSection" hidden>
+      <div class="arrange-hint" id="arrangeHint">
+        <span data-i18n="list.dragHint">Drag cards to arrange your sheet layout before printing.</span>
+      </div>
+      <div class="arrange-grid" id="arrangeGrid"></div>
+    </div>
+
+    <!-- Empty state -->
+    <div id="emptyState" class="empty-state" data-i18n="list.empty">
+      No flash designs added yet. Fill in the form above to add your first design.
+    </div>
+  </div>
 
 </div>
 
-<!-- Print modal -->
-<div id="print-modal" class="modal" style="display:none">
+<!-- Print & PDF Export Modal -->
+<div id="printModal" class="modal" hidden>
   <div class="modal-inner">
-    <div class="modal-controls no-print">
-      <button id="do-print-btn" class="primary-btn">Print</button>
-      <button id="close-modal-btn" class="secondary-btn">Close</button>
+    <div class="modal-top-bar no-print">
+      <div class="modal-title-group">
+        <span class="modal-title" data-i18n="print.modalTitle">Print &amp; PDF Export</span>
+      </div>
+      <div class="print-scope-wrap" id="printScopeWrap">
+        <label for="printScopeSelect" class="print-scope-label" data-i18n="print.scopeLabel">Sheet:</label>
+        <select id="printScopeSelect" class="input-field print-scope-select"></select>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="subtle-btn print-mode-btn active" data-mode="sheet" data-i18n="print.modeSheet">Flash Sheet</button>
+        <button type="button" class="subtle-btn print-mode-btn" data-mode="priceList" data-i18n="print.modePriceList">Counter Price List</button>
+        <button type="button" id="doPrintBtn" class="primary-btn" data-i18n="print.doPrintBtn">Print / Save as PDF</button>
+        <button type="button" id="closePrintModalBtn" class="secondary-btn" data-i18n="print.closeBtn">Close</button>
+      </div>
     </div>
-    <div id="print-preview" class="print-preview"></div>
+
+    <div class="modal-tip-banner no-print" data-i18n="print.browserTip">
+      Print Tip: In your browser print dialog, select "Save as PDF" and uncheck "Headers and footers" for clean, borderless sheets.
+    </div>
+
+    <div class="print-paper-container">
+      <div id="printPreviewContent"></div>
+    </div>
   </div>
 </div>
 
-<script src="/tools/flash-sheet-builder/js/app.js"></script>
+<!-- Load pure client scripts in exact order -->
+<script src="js/i18n.js"></script>
+<script src="js/input-guards.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
