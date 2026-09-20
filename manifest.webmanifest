@@ -1,0 +1,7 @@
+{
+  "name": "Tattoo Flash Sheet Builder",
+  "short_name": "Flash Sheet Builder",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone"
+}
