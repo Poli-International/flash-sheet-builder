@@ -1,0 +1,81 @@
+/* ============================================================
+   Poli International - Tool Print Stylesheet
+   Loaded by all tool pages via <link media="print">.
+   Hides interactive chrome, shows results only.
+   ============================================================ */
+
+@media print {
+  /* Hide everything non-essential */
+  header, footer, nav, .tool-header,
+  button, .btn, .primary-btn, .gen-btn, .add-btn, .ctrl-btn,
+  input, select, textarea,
+  .input-card, .input-section, .input-field,
+  .tab-buttons, .tab-btn,
+  .disclaimer, .tool-footer,
+  .share-bar, .share-card,
+  iframe, .embed-hint,
+  .theme-toggle, .dark-mode-toggle,
+  noscript, script, style[data-no-print] {
+    display: none !important;
+  }
+
+  /* Show results full-width */
+  body {
+    background: white !important;
+    color: black !important;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    margin: 1cm;
+    padding: 0;
+  }
+
+  .tool-wrapper {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Ensure hidden result cards become visible */
+  [style*="display:none"],
+  [style*="display: none"] {
+    display: block !important;
+  }
+
+  /* Force black text on white for readability */
+  *, *::before, *::after {
+    color: black !important;
+    background: white !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Links: show URL */
+  a[href]::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.8em;
+    color: #666 !important;
+  }
+
+  /* Keep result cards, tables, and data visible */
+  .results-card, .results, .result,
+  .results-body, .results-grid,
+  .metric-card, .metric-value,
+  .verdict-banner, .breakeven-section,
+  table, .log-table, .detail-table,
+  .summary-row, .summary-value,
+  .category-breakdown,
+  [class*="result"], [class*="Result"],
+  [id*="result"], [id*="Result"] {
+    display: block !important;
+    break-inside: avoid;
+  }
+
+  /* Page breaks */
+  h1, h2 { break-after: avoid; }
+  table { break-inside: avoid; }
+
+  /* Title */
+  h1 { font-size: 18pt; margin-bottom: 0.5cm; }
+  h2 { font-size: 14pt; margin-top: 0.5cm; }
+}
