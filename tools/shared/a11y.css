@@ -1,0 +1,56 @@
+/* ============================================================
+   Poli International - Shared Accessibility Stylesheet
+   Loaded by all tool pages. Quick wins, not a full audit.
+   ============================================================ */
+
+/* --- Focus-visible: keyboard users can see where they are --- */
+:focus-visible {
+  outline: 2px solid #3B82F6 !important;
+  outline-offset: 2px !important;
+  border-radius: 2px;
+}
+
+/* Remove the default focus ring for mouse clicks, keep for keyboard */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* --- Reduced motion: respect OS preference --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --- High contrast / forced-colors mode (Windows) --- */
+@media (forced-colors: active) {
+  button, .btn, input, select, textarea {
+    border: 1px solid ButtonText;
+  }
+  :focus-visible {
+    outline: 3px solid Highlight !important;
+  }
+}
+
+/* --- Minimum touch target for interactive elements --- */
+button, .btn, [role="button"], .tab-btn {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* --- Ensure readable line-height --- */
+body {
+  line-height: 1.6;
+}
+
+/* Donation buttons do not belong inside a tool. 2026-09-02.
+   Two tools are compiled React bundles (tattoo-price-estimator,
+   tattoo-font-previewer) with the Ko-fi anchor baked into minified JSX, and
+   the price estimator is the highest-earning page on the site, so cutting an
+   expression out of that bundle by hand is not a risk worth taking. This hides
+   them until each tool's V2 removes the button at SOURCE and rebuilds. */
+a[href*="ko-fi.com"],
+a[href*="buymeacoffee.com"] { display: none !important; }
