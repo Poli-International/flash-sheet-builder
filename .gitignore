@@ -1,18 +1,8 @@
-# Dependencies
 node_modules/
-.DS_Store
-Thumbs.db
-
-# Build output
+build/
 dist/
-
-# Local env
-.env.local
-
-# Backups
-*.bak
-*.backup
-*.schema.bak
-
-# Logs
+coverage/
+.DS_Store
 *.log
+.env*
+!.env.example
