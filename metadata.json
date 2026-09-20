@@ -1,8 +1,0 @@
-{
-  "name": "Tattoo Flash Sheet Builder-V2",
-  "description": "Build and print a professional tattoo flash sheet. Add designs with style, size, and price, then generate a printable client-ready sheet or export a CSV for your records.",
-  "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
-}
