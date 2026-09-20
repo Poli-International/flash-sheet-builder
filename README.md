@@ -1,90 +1,75 @@
-# Tattoo Flash Sheet Builder
+# Tattoo Flash Sheet Builder V2
 
-> **Build a professional tattoo flash sheet in minutes. Add designs with style, size, price, and notes, then print or export a CSV for your studio.**
+> **Layout, price, and print studio flash sheets and counter price lists with your own artwork. Everything stays inside the browser.**
 
 [![License](https://img.shields.io/github/license/Poli-International/flash-sheet-builder)](LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/Poli-International/flash-sheet-builder)](https://github.com/Poli-International/flash-sheet-builder/commits/main)
 [![GitHub Stars](https://img.shields.io/github/stars/Poli-International/flash-sheet-builder?style=social)](https://github.com/Poli-International/flash-sheet-builder/stargazers)
 
-**Live Demo:** [https://poliinternational.com/tools/flash-sheet-builder/](https://poliinternational.com/tools/flash-sheet-builder/)
+**Live Website:** [https://poliinternational.com/tools/flash-sheet-builder/](https://poliinternational.com/tools/flash-sheet-builder/)
 
 ---
 
-## 🎯 Overview
+## Overview
 
-Build a professional tattoo flash sheet in minutes. Add designs with style, size, price, and notes, then print or export a CSV for your studio.
+The Tattoo Flash Sheet Builder is a free client-side tool from [Poli International](https://poliinternational.com/) for tattoo artists and studios. It lays out an artist's flash designs on a printable sheet with custom sizes, prices, deposits, and availability tracking.
 
-**Category:** Tattoo Engineering
-
-This is a free, open-source widget from the [Poli International Widget Suite](https://poliinternational.com/tools/) - a collection of practical tools for tattoo and piercing studios, artists, and clients. It runs entirely in the browser; no data is sent to a server.
+All artwork, pricing, and sheets remain strictly on the user's device in local storage. Nothing is uploaded to any remote server.
 
 ---
 
-## ✨ Features
+## Features
 
-- ✅ **Tattoo Flash Sheet**
-- ✅ **Flash Sheet Builder**
-- ✅ **Tattoo Flash List**
-- ✅ **Tattoo Flash Sheet Template**
-- ✅ **Print Flash Sheet**
-- ✅ **Tattoo Studio Tools**
-- ✅ **Responsive Design** - works on desktop, tablet, and mobile.
-- ✅ **Free & Open Source** - MIT licensed.
-
----
-
-## 🎬 Demo
-
-### Try It Live
-
-**👉 [Use the tool now](https://poliinternational.com/tools/flash-sheet-builder/)**
+- **Artist's Own Artwork**: Attach flash design photos directly from your phone or desktop. Images are automatically auto-oriented, downscaled, stripped of all EXIF/GPS metadata, and compressed on an off-screen canvas.
+- **Print-Ready Sheet Layouts**: Formatted for A4 or US Letter paper with safe margins and studio identity details (title, artist, contact, date).
+- **Counter Price List Layout**: Text-only pricing sheet formatted for studio reception counters.
+- **Multiple Named Sheets**: Manage separate sheets for flash days, events, and guest spots. Export and import full `.json` backups.
+- **Any Currency**: Select your studio's currency (£, $, €, A$, C$, ¥, CHF, kr, R$). Prices and deposits are formatted with the chosen symbol without currency conversion.
+- **Availability States**: Mark designs as Available (one-off), Claimed (one-off taken, greyed out on print sheet), or Repeatable (multiple tattoos permitted).
+- **Flexible Arrangement**: Toggle between a fast tabular view and a visual drag-and-drop card grid. Set focal pieces to span 2 grid cells wide.
+- **CSV Export**: Export sheet inventory to spreadsheet-ready `.csv` format.
+- **Storage Budget Meter**: Live monitor tracking local storage usage with a warning threshold at 75%.
+- **Multilingual Support**: Fully localized in English, Spanish, French, German, Italian, Portuguese, and Dutch.
 
 ---
 
-## 🚀 Installation
+## Running Locally
 
-### Option 1: Use Online (Recommended)
-
-No installation needed! Just visit:
-**[https://poliinternational.com/tools/flash-sheet-builder/](https://poliinternational.com/tools/flash-sheet-builder/)**
-
-### Option 2: Run Locally
-
-This tool is pure HTML/CSS/JS - no build step. Clone the repo and open `index.html`:
+This tool requires Node.js (>=20) with no compilation build step required:
 
 ```bash
+# Clone the repository
 git clone https://github.com/Poli-International/flash-sheet-builder.git
 cd flash-sheet-builder
-# open index.html in your browser
+
+# Install server dependency
+npm install
+
+# Start local server on port 3000
+npm start
+```
+
+Visit `http://localhost:3000` in your web browser.
+
+---
+
+## Embedding
+
+To embed this tool on your studio website, use the following snippet:
+
+```html
+<iframe src="https://poliinternational.com/tools/flash-sheet-builder/index.html" width="100%" height="800" frameborder="0" loading="lazy"></iframe>
 ```
 
 ---
 
-## 🤝 Contributing
+## Documentation
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- [User Guide](docs/USER-GUIDE.md) - Detailed usage instructions for studio owners and artists.
+- [Technical Documentation](docs/TECHNICAL-DOCS.md) - Architecture, data schemas, image pipeline, and print specifications.
 
 ---
 
-## 💬 Support
+## License
 
-### Get Help
-
-- 📧 **Email**: <support@poliinternational.com>
-- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/Poli-International/flash-sheet-builder/issues)
-
----
-
-<div align="center">
-
-**Made with ❤️ by [Poli International](https://poliinternational.com)**
-
-[Website](https://poliinternational.com) • [Tools](https://poliinternational.com/tools/) • [GitHub](https://github.com/Poli-International)
-
-</div>
+MIT License - see [LICENSE](LICENSE) for details.
