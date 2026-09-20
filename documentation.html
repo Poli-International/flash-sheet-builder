@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="robots" content="noindex,nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tattoo Flash Sheet Builder Documentation | Poli International</title>
+    <meta name="description" content="Build a studio flash sheet from your own designs, with sizes and prices you set, print-ready or exported to CSV.">
+    <link rel="canonical" href="https://poliinternational.com/flash-sheet-builder/">
+    <style>
+        body { background: #0f0f0f; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; }
+        body.in-iframe .doc-hero h1 { display: none; }
+        * { box-sizing: border-box; }
+        .entry-content { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+        .doc-hero { background: linear-gradient(135deg, #3B82F6, #8B5CF6); padding: 3rem 2rem; text-align: center; border-radius: 0.75rem; margin-bottom: 2rem; }
+        .doc-hero h1 { font-size: 2.2rem; margin: 0 0 1rem; font-weight: 700; }
+        .doc-hero p { font-size: 1.15rem; color: #E0E7FF; margin: 0; }
+        .doc-hero .v2 { display: inline-block; margin-bottom: 1rem; padding: 0.2rem 0.75rem; border-radius: 999px; background: #10B981; color: #04241a; font-weight: 800; font-size: 0.8rem; letter-spacing: 0.08em; }
+        .doc-section { margin: 2rem 0; padding: 2rem; background: #1a1a1a; border-radius: 0.75rem; border-left: 4px solid #3B82F6; }
+        .doc-section h2 { color: #60A5FA; font-size: 1.7rem; margin: 0 0 1.25rem; font-weight: 600; }
+        .doc-section h3 { color: #A78BFA; font-size: 1.3rem; margin: 1.75rem 0 0.75rem; font-weight: 600; }
+        .doc-section p, .doc-section li { color: #ccc; line-height: 1.75; font-size: 1.02rem; }
+        .doc-section ul, .doc-section ol { padding-left: 1.5rem; }
+        .doc-section li { margin: 0.4rem 0; }
+        .doc-section code { background: #2a2a2a; padding: 0.1rem 0.35rem; border-radius: 0.25rem; font-size: 0.92em; }
+        .doc-section a { color: #60A5FA; font-weight: 600; }
+        .highlight-box { background: linear-gradient(135deg, #1E3A8A, #4C1D95); padding: 1.25rem 1.5rem; border-radius: 0.5rem; margin: 1.5rem 0; border-left: 4px solid #10B981; }
+        .highlight-box p { color: #E0E7FF; margin: 0; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        th, td { padding: 0.75rem; text-align: left; border: 1px solid #333; vertical-align: top; }
+        th { background: #2a2a2a; color: #60A5FA; }
+        td { color: #ccc; }
+        .doc-langs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1.5rem; font-size: 0.9rem; }
+        .doc-langs a, .doc-langs span { padding: 0.3rem 0.7rem; border-radius: 999px; border: 1px solid #333; text-decoration: none; }
+        .doc-langs a { color: #60A5FA; }
+        .doc-langs span { background: #1E3A8A; color: #E0E7FF; border-color: #1E3A8A; font-weight: 700; }
+    </style>
+</head>
+<body>
+<script>if (window.self !== window.top) document.body.classList.add('in-iframe');</script>
+    <div class="entry-content">
+        <div class="doc-hero">
+            <span class="v2">V2</span>
+            <h1>Tattoo Flash Sheet Builder</h1>
+            <p>Build a studio flash sheet from your own designs, with sizes and prices you set, print-ready or exported to CSV.</p>
+        </div>
+        <p>The Tattoo Flash Sheet Builder is an in-browser layout and pricing tool that helps tattoo artists and studio owners turn flash artwork, prices, and booking details into printable sheets and counter price lists.</p>
+        <div class="doc-section">
+        <h2>What it is for</h2>
+        <p>The tool formats tattoo flash designs into printable sheets for studio display and front-desk consultations. Artists can set prices, deposits, sizing notes, sitting times, and availability states without graphic design software. Studios can generate an illustrated artwork grid for display binders and an itemized counter price list for reception staff.</p>
+        </div>
+        <div class="doc-section">
+        <h2>Who it is for</h2>
+        <p>This tool is built for independent tattoo artists, resident studio tattooists, guest artists, and studio managers. It is designed for shop binders, flash days, and promotions where fast presentation and pricing clarity are needed.</p>
+        </div>
+        <div class="doc-section">
+        <h2>How to use it</h2>
+        <h3>Checking the browser storage budget</h3>
+        <ol>
+        <li>Monitor local storage on the <code>Browser Storage Budget</code> meter at the top of the page.</li>
+        <li>If storage exceeds 75 percent, heed the alert: <code>Browser storage is over 75% full. Consider exporting a backup or clearing unused sheets.</code>.</li>
+        <li>Export a backup before adding photo scans so your browser memory does not fill up.</li>
+        </ol>
+        <h3>Managing sheets and backups</h3>
+        <ol>
+        <li>Select a sheet in <code>Active Sheet:</code> to switch projects.</li>
+        <li>Click <code>+ New Sheet</code> to add a sheet, <code>Duplicate</code> to clone it, or <code>Delete</code> to remove it.</li>
+        <li>Click <code>Export Backup</code> to download a JSON file, or click <code>Import Backup</code> to restore it.</li>
+        </ol>
+        <h3>Configuring sheet settings and studio identity</h3>
+        <ol>
+        <li>Open <code>Sheet Settings &amp; Identity</code> to update your sheet details.</li>
+        <li>Enter <code>Sheet Title</code>, <code>Artist / Studio Name</code>, <code>Contact / Instagram</code>, and <code>Sheet Date</code>.</li>
+        <li>Select your <code>Currency</code>, set <code>Paper Format</code> to <code>A4 (210 × 297 mm)</code> or <code>US Letter (8.5 × 11 in)</code>, and set <code>Grid Columns</code> to <code>2 Columns</code>, <code>3 Columns</code>, or <code>4 Columns</code>.</li>
+        </ol>
+        <h3>Adding and editing flash designs</h3>
+        <ol>
+        <li>In <code>Add Flash Design</code>, add artwork under <code>Design Artwork (Optional - stays on device only)</code> using <code>Click or drag &amp; drop design photo</code>, or use <code>Change</code> or <code>Remove</code>.</li>
+        <li>Enter <code>Design Name *</code>, pick <code>Style</code> and <code>Size</code>, and input <code>Price</code> and <code>Deposit</code> (or leave blank for POA).</li>
+        <li>Enter <code>Est. Sitting Time</code>, and set <code>Availability Status</code> to <code>Available (Unclaimed one-off)</code>, <code>Claimed (One-off taken)</code>, or <code>Repeatable (Multiple tattoos permitted)</code>.</li>
+        <li>Check <code>Centerpiece: take 2 grid cells wide</code> for wide pieces, and add notes in <code>Notes / Placement</code>.</li>
+        <li>Click <code>Add to Flash Sheet</code> to save, or use <code>Update Design</code> or <code>Cancel Edit</code> when editing.</li>
+        </ol>
+        <h3>Reviewing designs in Table View</h3>
+        <ol>
+        <li>Under <code>Sheet Designs</code>, select <code>Table View</code> to inspect your inventory.</li>
+        <li>Check the summary strip for counts, availability, and total value.</li>
+        <li>Click <code>Claim</code> on any row to mark a piece taken, or click <code>Make Available</code> to reopen it.</li>
+        <li>Click <code>Edit</code> to modify a design, <code>Delete</code> to remove it, or <code>Clear All</code> to wipe the sheet.</li>
+        </ol>
+        <h3>Arranging sheet layouts with Drag to Arrange</h3>
+        <ol>
+        <li>Select <code>Drag to Arrange</code> above the designs list.</li>
+        <li>Follow the prompt: <code>Drag cards to arrange your sheet layout before printing.</code>.</li>
+        <li>Drag cards by their handle to arrange focal and complementary designs.</li>
+        </ol>
+        <h3>Exporting spreadsheet data</h3>
+        <ol>
+        <li>Click <code>Export CSV</code> above the designs list.</li>
+        <li>Save the CSV file to your computer.</li>
+        <li>Open the file in spreadsheet software to review inventory, deposits, or sales.</li>
+        </ol>
+        <h3>Printing flash sheets and counter price lists</h3>
+        <ol>
+        <li>Click <code>Preview &amp; Print Flash Sheet</code> to preview the visual grid.</li>
+        <li>Alternatively, click <code>Print Counter Price List</code> for an itemized table.</li>
+        <li>In the <code>Print &amp; PDF Export</code> modal, switch between <code>Flash Sheet</code> and <code>Counter Price List</code>.</li>
+        <li>Click <code>Print / Save as PDF</code> to launch the print dialog.</li>
+        <li>Click <code>Close</code> to dismiss the preview.</li>
+        </ol>
+        </div>
+        <div class="doc-section">
+        <h2>What it does not do</h2>
+        <p>The tool is an in-browser layout and price sheet creator. It intentionally excludes administrative functions handled by other specialized tools:</p>
+        <ul>
+        <li>It does not calculate hourly chair overheads or benchmark studio rates. To analyze studio costs and regional pricing, use the <a href="https://poliinternational.com/studio-pricing-benchmark/" target="_top">Studio Pricing Benchmark</a>.</li>
+        <li>It does not create legal release waivers, medical questionnaires, or digital signatures. To generate consent forms and intake paperwork, use the <a href="https://poliinternational.com/consent-form-generator/" target="_top">Consent Form Builder</a>.</li>
+        <li>It does not process card payments or collect booking deposits online. Deposits are taken in person or through your studio card reader.</li>
+        <li>It does not run an online booking calendar or send appointment notifications.</li>
+        </ul>
+        </div>
+        <div class="doc-section">
+        <h2>Where your data lives</h2>
+        <p>All flash designs, prices, notes, and compressed photos live entirely inside your local web browser on your computer or phone. No artwork, contact handles, or financial figures are sent across the network or stored on remote servers.</p>
+        <p>Clearing site cookies and data, resetting browser history, or using private browsing windows will erase your stored sheets. Export a backup regularly to keep your collections safe.</p>
+        <p>The backup file is a JSON document containing:</p>
+        <ul>
+        <li>Sheet settings (titles, artist names, contact handles, dates, currencies, paper formats, and column counts).</li>
+        <li>Design entries (names, styles, sizes, prices, deposits, times, statuses, spans, and notes).</li>
+        <li>Compressed image data for attached artwork.</li>
+        </ul>
+        </div>
+        <div class="doc-section">
+        <h2>Printing and exporting</h2>
+        <p>The print output is formatted for physical studio use:</p>
+        <ul>
+        <li>Paper sizing: Match your printer settings to the paper size chosen in the tool (A4 or US Letter).</li>
+        <li>Print margins: The preview displays a dashed margin outline marking the 0.5 inch (12.7 mm) safety zone. Choose default or minimum margins in your print dialog.</li>
+        <li>Headers and footers: Uncheck "Headers and footers" in your print prompt to remove URLs and timestamps from borders.</li>
+        <li>Background graphics: Check "Background graphics" in your print options so status badges, table borders, and card shading print correctly.</li>
+        <li>Monochrome printing: Layouts use strong contrast and clean lines, suitable for black-and-white laser printers, copiers, or thermal stencil copiers.</li>
+        </ul>
+        </div>
+        <div class="doc-section">
+        <h2>Questions and answers</h2>
+        <h3>How do I print a tattoo flash sheet to A4 or US Letter size?</h3>
+        <p>Select your paper format in the settings card before opening print preview. When you click print, match your printer paper size to the format chosen in the tool, and uncheck headers and footers for a clean border.</p>
+        <h3>Can I mark flash designs as claimed after a client books them?</h3>
+        <p>You can update availability directly in the designs table by clicking the claim button on that row. A claimed badge appears on the design in your printed sheet so clients know it is taken. If an appointment cancels, click the make available button to reopen the piece.</p>
+        <h3>Where are my uploaded flash photos and drawings stored?</h3>
+        <p>All photos and artwork scans remain inside local storage in your web browser. Images are resized, compressed, and stripped of camera metadata on an off-screen canvas before saving. No files are uploaded to Poli International or sent across the internet.</p>
+        <h3>How do I make a focal flash design span two columns wide?</h3>
+        <p>Check the centerpiece box in the design form before adding or updating the piece. In a two-column or three-column grid, that card expands across two cells to highlight larger artwork. You can use the drag-to-arrange view to position other flash pieces around it.</p>
+        <h3>Can I use different currencies for guest spots or travel dates?</h3>
+        <p>You can select a different currency in the settings dropdown whenever you work in another country. The symbol updates across all price labels, deposit tags, and totals without altering the numbers you entered. This makes it simple to prepare flash sheets for international conventions.</p>
+        <h3>What is the difference between the flash sheet and the counter price list?</h3>
+        <p>The flash sheet is an illustrated visual grid designed for client viewing binders and studio walls. The counter price list is a compact reference table designed for reception staff to check prices, deposits, and estimated times quickly. You can toggle between both layouts in the print preview window.</p>
+        </div>
+        <div class="doc-section">
+        <h2>Limits</h2>
+        <p>The Tattoo Flash Sheet Builder cannot evaluate technical difficulty, placement complexity, or tattooing time. The artist must examine artwork, placement area, and client skin to decide appropriate sitting times and deposits.</p>
+        <p>The tool cannot enforce refund terms, cancellation policies, or client age requirements. Studio owners and tattooists set booking policies, verify legal age of consent, and follow local regulations.</p>
+        </div>
+        <div class="doc-section">
+            <h2>Use the tool</h2>
+            <p><a href="https://poliinternational.com/flash-sheet-builder/" target="_top">Open the Tattoo Flash Sheet Builder</a>. Everything runs in your browser; nothing you enter is sent anywhere.</p>
+        </div>
+    </div>
+</body>
+</html>
