@@ -1,0 +1,322 @@
+/* ============================================================
+   Poli International - Tattoo Flash Sheet Builder
+   Dedicated Print Stylesheet (css/print.css)
+   Loaded via <link rel="stylesheet" href="css/print.css" media="print">
+   Ensures #printPreviewContent takes up full A4/Letter page,
+   removes non-printing margins/borders, and hides .no-print chrome.
+   ============================================================ */
+
+@media print {
+  @page {
+    size: auto;
+    margin: 0;
+  }
+
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide all non-printing interface elements */
+  .no-print,
+  .tool-wrapper,
+  .modal-top-bar,
+  .modal-tip-banner,
+  .safe-margin-indicator-label,
+  .print-scope-control,
+  .theme-toggle,
+  header.tool-header,
+  .top-bar,
+  .storage-card,
+  .sheet-manager-card,
+  .calc-card,
+  nav,
+  button,
+  input,
+  select,
+  textarea {
+    display: none !important;
+  }
+
+  /* Modal container reset to flow naturally into print output */
+  .modal {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    overflow: visible !important;
+  }
+
+  .modal-inner {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  /* Paper container: remove non-printing borders, margins, shadows and radii */
+  .print-paper-container {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  /* Print preview content: takes up the full A4 / Letter page */
+  #printPreviewContent {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+  }
+
+  /* Multi-sheet and single-sheet page container */
+  .print-sheet-page {
+    display: block !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .print-sheet-page:not(:last-child) {
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  /* Safe printable box: clean print padding, removing screen borders and margins */
+  .safe-margin-box {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 10mm 12mm !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  /* Sheet Print Header */
+  .sheet-print-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+    border-bottom: 2px solid #000000 !important;
+    padding-bottom: 0.4rem !important;
+    margin-bottom: 0.6rem !important;
+  }
+
+  .sheet-print-title {
+    color: #000000 !important;
+    font-size: 1.35rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  .sheet-print-artist {
+    color: #111111 !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+  }
+
+  .sheet-print-contact,
+  .sheet-print-date {
+    color: #333333 !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Flash sheet cards grid */
+  .print-grid {
+    display: grid !important;
+    gap: 0.55rem !important;
+    flex: 1 0 auto !important;
+    align-content: start !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .print-grid.cols-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .print-grid.cols-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .print-grid.cols-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  /* Flash card item */
+  .print-card {
+    border: 1.5px solid #000000 !important;
+    border-radius: 4px !important;
+    background: #ffffff !important;
+    padding: 0.45rem 0.55rem !important;
+    box-shadow: none !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .print-card.span-2 {
+    grid-column: span 2 !important;
+  }
+
+  .print-card-img-wrap {
+    height: 100px !important;
+    background: #ffffff !important;
+    border: 1px solid #e0e0e0 !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  .print-card.span-2 .print-card-img-wrap {
+    height: 135px !important;
+  }
+
+  .print-card-img {
+    max-height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .print-card-badge {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1.5px solid #000000 !important;
+    font-weight: 700 !important;
+  }
+
+  .print-card-badge.claimed {
+    background: #000000 !important;
+    color: #ffffff !important;
+  }
+
+  .print-card-name {
+    color: #000000 !important;
+    font-size: 0.92rem !important;
+    font-weight: 700 !important;
+  }
+
+  .print-card-meta {
+    color: #444444 !important;
+    font-size: 0.78rem !important;
+  }
+
+  .print-card-price {
+    color: #000000 !important;
+    font-size: 0.95rem !important;
+    font-weight: 800 !important;
+  }
+
+  .print-card-extra {
+    color: #444444 !important;
+    font-size: 0.75rem !important;
+  }
+
+  .print-card-notes {
+    color: #555555 !important;
+    font-size: 0.72rem !important;
+  }
+
+  /* Counter Price List Table */
+  .counter-price-list-heading {
+    color: #000000 !important;
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+    margin: 0.4rem 0 0.8rem 0 !important;
+  }
+
+  .price-list-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-bottom: 0.75rem !important;
+    page-break-inside: auto !important;
+  }
+
+  .price-list-table th {
+    background: #f0f0f0 !important;
+    color: #000000 !important;
+    border: 1.5px solid #000000 !important;
+    padding: 0.4rem 0.5rem !important;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+  }
+
+  .price-list-table td {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #cccccc !important;
+    padding: 0.4rem 0.5rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  .price-list-table tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Sheet Footer with Page Number / Sheet Index */
+  .sheet-print-footer {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    border-top: 1px solid #cccccc !important;
+    padding-top: 0.5rem !important;
+    margin-top: auto !important;
+    font-size: 0.75rem !important;
+    color: #333333 !important;
+  }
+
+  .sheet-print-footer-info {
+    flex: 1 1 auto !important;
+    color: #444444 !important;
+  }
+
+  .sheet-print-page-num {
+    font-weight: 700 !important;
+    color: #000000 !important;
+    white-space: nowrap !important;
+    padding-left: 0.5rem !important;
+  }
+}
