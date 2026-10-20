@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head><meta name="robots" content="noindex,nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tattoo Flash Sheet Builder Documentation | Poli International</title>
+    <meta name="description" content="Build a studio flash sheet from your own designs, with sizes and prices you set, print-ready or exported to CSV.">
+    <link rel="canonical" href="https://poliinternational.com/flash-sheet-builder/">
+    <style>
+        body { background: #0f0f0f; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; }
+        body.in-iframe .doc-hero h1 { display: none; }
+        * { box-sizing: border-box; }
+        .entry-content { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+        .doc-hero { background: linear-gradient(135deg, #3B82F6, #8B5CF6); padding: 3rem 2rem; text-align: center; border-radius: 0.75rem; margin-bottom: 2rem; }
+        .doc-hero h1 { font-size: 2.2rem; margin: 0 0 1rem; font-weight: 700; }
+        .doc-hero p { font-size: 1.15rem; color: #E0E7FF; margin: 0; }
+        .doc-hero .v2 { display: inline-block; margin-bottom: 1rem; padding: 0.2rem 0.75rem; border-radius: 999px; background: #10B981; color: #04241a; font-weight: 800; font-size: 0.8rem; letter-spacing: 0.08em; }
+        .doc-section { margin: 2rem 0; padding: 2rem; background: #1a1a1a; border-radius: 0.75rem; border-left: 4px solid #3B82F6; }
+        .doc-section h2 { color: #60A5FA; font-size: 1.7rem; margin: 0 0 1.25rem; font-weight: 600; }
+        .doc-section h3 { color: #A78BFA; font-size: 1.3rem; margin: 1.75rem 0 0.75rem; font-weight: 600; }
+        .doc-section p, .doc-section li { color: #ccc; line-height: 1.75; font-size: 1.02rem; }
+        .doc-section ul, .doc-section ol { padding-left: 1.5rem; }
+        .doc-section li { margin: 0.4rem 0; }
+        .doc-section code { background: #2a2a2a; padding: 0.1rem 0.35rem; border-radius: 0.25rem; font-size: 0.92em; }
+        .doc-section a { color: #60A5FA; font-weight: 600; }
+        .highlight-box { background: linear-gradient(135deg, #1E3A8A, #4C1D95); padding: 1.25rem 1.5rem; border-radius: 0.5rem; margin: 1.5rem 0; border-left: 4px solid #10B981; }
+        .highlight-box p { color: #E0E7FF; margin: 0; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        th, td { padding: 0.75rem; text-align: left; border: 1px solid #333; vertical-align: top; }
+        th { background: #2a2a2a; color: #60A5FA; }
+        td { color: #ccc; }
+        .doc-langs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1.5rem; font-size: 0.9rem; }
+        .doc-langs a, .doc-langs span { padding: 0.3rem 0.7rem; border-radius: 999px; border: 1px solid #333; text-decoration: none; }
+        .doc-langs a { color: #60A5FA; }
+        .doc-langs span { background: #1E3A8A; color: #E0E7FF; border-color: #1E3A8A; font-weight: 700; }
+    </style>
+</head>
+<body>
+<nav class="doc-langs" aria-label="Idioma da documentação" style="display:flex;flex-wrap:wrap;gap:6px 14px;max-width:900px;margin:12px auto 0;padding:0 16px;font-size:14px;"><a lang="en" href="documentation.html">English</a><a lang="fr" href="documentation-fr.html">Français</a><a lang="de" href="documentation-de.html">Deutsch</a><a lang="it" href="documentation-it.html">Italiano</a><a lang="es" href="documentation-es.html">Español</a><a lang="nl" href="documentation-nl.html">Nederlands</a><span lang="pt">Português</span><a lang="th" href="documentation-th.html">ไทย</a></nav>
+<script>if (window.self !== window.top) document.body.classList.add('in-iframe');</script>
+    <div class="entry-content">
+        <div class="doc-hero">
+            <span class="v2">V2</span>
+            <h1>Tattoo Flash Sheet Builder</h1>
+            <p>Build a studio flash sheet from your own designs, with sizes and prices you set, print-ready or exported to CSV.</p>
+        </div>
+        <p>O Tattoo Flash Sheet Builder é uma ferramenta de paginação e cálculo de preços executada no navegador que ajuda tatuadores e responsáveis de estúdio a converter desenhos flash, tarifas e termos de marcação em pranchas prontas a imprimir e tabelas de preços de balcão para os clientes.</p>
+        <div class="doc-section">
+        <h2>Para que serve a ferramenta</h2>
+        <p>Esta ferramenta organiza desenhos flash de tatuagem em pranchas prontas a imprimir para exposição em estúdio, dossiês de consulta e atendimento na receção. Os tatuadores podem definir preços, entradas, notas sobre dimensões, tempos estimados de sessão e estados de disponibilidade sem recorrer a aplicações complexas de design gráfico. Os estúdios obtêm uma grelha ilustrada elegante para os álbuns de mostra e uma lista pormenorizada de preços unitários para os funcionários de atendimento.</p>
+        </div>
+        <div class="doc-section">
+        <h2>A quem se destina</h2>
+        <p>Esta ferramenta destina-se a tatuadores independentes, artistas residentes de estúdio, tatuadores convidados (guest spots) e gerentes de estúdio. É indicada para dossiês de banca, flash days e ações promocionais em que a rapidez de apresentação e a transparência de preços são essenciais.</p>
+        </div>
+        <div class="doc-section">
+        <h2>Como utilizar</h2>
+        <h3>Verificação do espaço de armazenamento do navegador</h3>
+        <ol>
+        <li>Monitorize o armazenamento local no indicador <code>Espaço de armazenamento do navegador</code> no topo da página.</li>
+        <li>Se a utilização ultrapassar os 75 por cento, atente no alerta: <code>O armazenamento do navegador ultrapassou 75% da capacidade. Considere exportar uma cópia de segurança ou apagar pranchas não utilizadas.</code>.</li>
+        <li>Exporte uma cópia de segurança antes de adicionar fotografias de alta resolução para evitar sobrecarregar a memória do navegador.</li>
+        </ol>
+        <h3>Gestão de pranchas e cópias de segurança</h3>
+        <ol>
+        <li>Selecione uma prancha em <code>Prancha ativa:</code> para alternar entre diferentes projetos.</li>
+        <li>Clique em <code>+ Nova prancha</code> para criar uma prancha, em <code>Clonar prancha</code> para a duplicar ou em <code>Apagar</code> para a remover.</li>
+        <li>Clique em <code>Exportar cópia de segurança</code> para descarregar um ficheiro JSON para o computador, ou em <code>Importar cópia de segurança</code> para restaurar registos anteriores.</li>
+        </ol>
+        <h3>Configuração dos parâmetros da prancha e identidade do estúdio</h3>
+        <ol>
+        <li>Abra a secção <code>Definições e identidade da prancha</code> para atualizar as informações do projeto.</li>
+        <li>Preencha <code>Título da prancha</code>, <code>Nome do tatuador ou estúdio</code>, <code>Contacto / Redes sociais</code> e <code>Data da prancha</code>.</li>
+        <li>Escolha a sua <code>Moeda</code>, defina <code>Formato do papel</code> para <code>A4 (210 × 297 mm)</code> ou <code>US Letter (8,5 × 11 pol.)</code>, e escolha em <code>Colunas da grelha</code> entre <code>2 colunas</code>, <code>3 colunas</code> ou <code>4 colunas</code>.</li>
+        </ol>
+        <h3>Adicionar e editar desenhos flash</h3>
+        <ol>
+        <li>No painel <code>Adicionar desenho flash</code>, introduza uma imagem sob <code>Desenho do flash (Opcional - permanece exclusivamente no dispositivo)</code> através da área <code>Clique ou arraste a fotografia do desenho para aqui</code>, ou use os botões <code>Substituir</code> ou <code>Remover</code>.</li>
+        <li>Indique o <code>Nome do desenho *</code>, selecione o <code>Estilo de tatuagem</code> e a <code>Dimensão</code>, e introduza <code>Preço</code> e <code>Entrada</code> (ou deixe em branco para orçamento sob consulta).</li>
+        <li>Indique a <code>Duração prevista da sessão</code> e selecione o <code>Estado de disponibilidade</code> entre <code>Disponível (Peça exclusiva não reservada)</code>, <code>Reservado (Peça exclusiva atribuída)</code> ou <code>Repetível (Desenho aplicável mais de uma vez)</code>.</li>
+        <li>Assinale <code>Peça de destaque: ocupa 2 colunas da grelha</code> para peças centrais de maior envergadura e registe anotações em <code>Notas / Local no corpo</code>.</li>
+        <li>Clique em <code>Adicionar à prancha</code> para guardar o registo, ou utilize <code>Atualizar desenho</code> e <code>Cancelar edição</code> quando estiver a editar um desenho existente.</li>
+        </ol>
+        <h3>Rever desenhos na vista em tabela</h3>
+        <ol>
+        <li>Em <code>Desenhos da prancha</code>, mude para <code>Vista em tabela</code> para examinar o inventário completo.</li>
+        <li>Consulte a barra de resumo para verificar o total de peças, a disponibilidade e o valor monetário global da prancha.</li>
+        <li>Clique em <code>Marcar como adjudicado</code> em qualquer linha para indicar que a peça foi reservada, ou em <code>Marcar disponível</code> para a disponibilizar de novo.</li>
+        <li>Clique em <code>Editar</code> para modificar um desenho, em <code>Apagar</code> para o remover ou em <code>Limpar tudo</code> para reiniciar toda a prancha.</li>
+        </ol>
+        <h3>Organizar a disposição da prancha com arrastar para ordenar</h3>
+        <ol>
+        <li>Selecione o separador <code>Arrastar para ordenar</code> localizado acima da lista de desenhos.</li>
+        <li>Siga a indicação visível no ecrã: <code>Arraste os cartões para ajustar a disposição da prancha antes de imprimir.</code>.</li>
+        <li>Arraste os cartões pelo respetivo manípulo para equilibrar as peças centrais e os desenhos complementares na folha.</li>
+        </ol>
+        <h3>Exportação de dados para folhas de cálculo</h3>
+        <ol>
+        <li>Clique em <code>Exportar para CSV</code> acima da lista de desenhos.</li>
+        <li>Guarde o ficheiro CSV no seu computador.</li>
+        <li>Abra o ficheiro no Excel ou noutra folha de cálculo para inventariar as peças, conferir entradas recebidas ou apurar faturações.</li>
+        </ol>
+        <h3>Imprimir pranchas flash e tabelas de preços de balcão</h3>
+        <ol>
+        <li>Clique em <code>Pré-visualizar e imprimir prancha</code> para aceder à pré-visualização da grelha gráfica.</li>
+        <li>Em alternativa, clique em <code>Imprimir tabela de preços de balcão</code> para obter uma relação estruturada linha a linha.</li>
+        <li>Na janela <code>Impressão e exportação em PDF</code>, alterne livremente entre <code>Prancha de flash</code> e <code>Tabela de balcão</code>.</li>
+        <li>Clique em <code>Imprimir / Guardar em PDF</code> para abrir o assistente de impressão do sistema operativo.</li>
+        <li>Clique em <code>Fechar</code> para concluir a pré-visualização.</li>
+        </ol>
+        </div>
+        <div class="doc-section">
+        <h2>O que a ferramenta não faz</h2>
+        <p>Esta ferramenta foi desenhada unicamente para paginação e apresentação tarifária direta no navegador. Exclui deliberadamente funcionalidades de gestão e administração atribuídas a outras ferramentas especializadas:</p>
+        <ul>
+        <li>Não calcula encargos fixos de bancada nem fornece valores médios de mercado. Para estudar custos operacionais de estúdio e analisar preços regionais, consulte o <a href="https://poliinternational.com/studio-pricing-benchmark/" target="_top">Studio Pricing Benchmark</a>.</li>
+        <li>Não emite termos de consentimento informado, questionários de saúde nem recolhe assinaturas eletrónicas. Para gerar impressos de consentimento e fichas de admissão de clientes conformes à lei, utilize o <a href="https://poliinternational.com/form-builder/" target="_top">Consent Form Builder</a>.</li>
+        <li>Não efetua cobranças por cartão nem processa transferências telemáticas de entradas. As entradas são liquidadas presencialmente ou no terminal de pagamento do estúdio.</li>
+        <li>Não gere agendas de marcação online nem envia lembretes automatizados de sessão aos clientes.</li>
+        </ul>
+        </div>
+        <div class="doc-section">
+        <h2>Onde residem os seus dados</h2>
+        <p>Todos os desenhos flash, preços, notas e fotografias comprimidas permanecem guardados em exclusivo no navegador web local do seu computador ou telemóvel. Nenhuma imagem, conta de rede social ou quantia financeira é transmitida pela internet ou armazenada em servidores remotos.</p>
+        <p>A limpeza de cookies e dados de navegação, a reposição do histórico do browser ou o recurso a janelas de navegação anónima eliminarão permanentemente as pranchas arquivadas. Exporte regularmente uma cópia de segurança para manter as suas coleções devidamente protegidas.</p>
+        <p>O ficheiro de cópia de segurança é um documento JSON que reúne:</p>
+        <ul>
+        <li>Definições da prancha (títulos, nomes de tatuadores, contactos, datas, moedas, formatos de papel e número de colunas).</li>
+        <li>Entradas de desenhos (nomes, estilos, tamanhos, preços, entradas, durações, estados de disponibilidade, largura de colunas e notas).</li>
+        <li>Dados gráficos comprimidos de cada desenho associado.</li>
+        </ul>
+        </div>
+        <div class="doc-section">
+        <h2>Impressão e exportação</h2>
+        <p>O formato impresso está calibrado com rigor para a rotina diária no estúdio:</p>
+        <ul>
+        <li>Dimensão do papel: faça coincidir as definições do controlador de impressão com o formato selecionado na ferramenta (A4 ou US Letter).</li>
+        <li>Margens de impressão: a pré-visualização apresenta uma moldura tracejada que delimita a margem de segurança de 12,7 mm (0,5 polegadas). Escolha margens normais ou mínimas na janela de impressão.</li>
+        <li>Cabeçalhos e rodapés: desative a opção "Cabeçalhos e rodapés" no diálogo de impressão para suprimir hiperligações e datas nas margens da folha.</li>
+        <li>Gráficos de fundo: selecione obrigatoriamente a opção "Gráficos de fundo" nas opções de impressão para que os emblemas de estado, contornos de tabela e sombras dos cartões saiam nítidos.</li>
+        <li>Impressão monocromática: as composições assentam em contrastes fortes e traços limpos, perfeitos para impressoras laser a preto e branco, fotocopiadoras ou termocopiadoras de decalques (stencils).</li>
+        </ul>
+        </div>
+        <div class="doc-section">
+        <h2>Perguntas frequentes</h2>
+        <h3>Como imprimir uma prancha de flash de tatuagem nos formatos A4 ou US Letter?</h3>
+        <p>Selecione o formato pretendido no painel de definições antes de abrir a pré-visualização de impressão. No momento de imprimir, confirme que o formato escolhido no computador coincide exatamente com o da ferramenta e desligue cabeçalhos e rodapés para garantir margens desimpedidas.</p>
+        <h3>É possível assinalar um desenho flash como reservado assim que um cliente o marca?</h3>
+        <p>Pode atualizar a disponibilidade diretamente na tabela de desenhos clicando no botão de adjudicação da respetiva linha. Na prancha impressa surgirá de imediato um distintivo de reservado sobre a ilustração, informando a clientela de que o trabalho já foi adjudicado. Se a sessão for cancelada, basta carregar no botão para disponibilizar a peça novamente.</p>
+        <h3>Onde ficam guardadas as fotografias e ilustrações de flash carregadas?</h3>
+        <p>Todas as fotografias e imagens digitalizadas de desenhos permanecem guardadas no armazenamento local do seu próprio navegador de internet. As imagens são redimensionadas, comprimidas e expurgadas dos metadados de máquina fotográfica numa tela invisível antes da gravação. Nenhum ficheiro é enviado para a Poli International nem transferido através da rede.</p>
+        <h3>Como configurar um desenho flash de destaque para ocupar duas colunas de largura?</h3>
+        <p>Ative a opção de peça de destaque no formulário do desenho antes de adicionar ou guardar a peça. Numa grelha de duas ou três colunas, o cartão estende-se automaticamente por dois blocos para dar maior visibilidade a obras de grande dimensão. Posteriormente, pode recorrer à funcionalidade de arrastar e ordenar para articular harmoniosamente os restantes desenhos ao redor.</p>
+        <h3>Posso usar moedas diferentes para deslocações e convenções no estrangeiro?</h3>
+        <p>Pode selecionar uma moeda diferente no menu de definições sempre que estiver a trabalhar noutro país. O símbolo monetário atualiza-se de imediato em todas as etiquetas de preço, notas de entrada e totais, mantendo inalterados os números inseridos. Esta flexibilidade simplifica a preparação de pranchas prontas para convenções internacionais.</p>
+        <h3>Qual é a diferença entre a prancha de flash e a tabela de preços de balcão?</h3>
+        <p>A prancha de flash é uma grelha ilustrada desenhada para visualização por parte dos clientes em dossiês de receção ou nas paredes do estúdio. A tabela de preços de balcão é uma lista de referência rápida concebida para a equipa de receção verificar prontamente preços, valores de entrada e tempos estimados de sessão. Pode alternar livremente entre os dois formatos no ecrã de impressão.</p>
+        </div>
+        <div class="doc-section">
+        <h2>Limites da ferramenta</h2>
+        <p>O Tattoo Flash Sheet Builder não afere a exigência técnica de um trabalho, a especificidade anatómica do local de aplicação ou a duração efetiva do processo de tatuagem. Cabe sempre ao tatuador analisar a composição artística, a zona corporal e a pele do cliente para estipular com precisão a duração da sessão e o sinal a cobrar.</p>
+        <p>A ferramenta não gere políticas de cancelamento, pedidos de reembolso nem a maioridade legal dos clientes. Os proprietários de estúdio e tatuadores são os únicos responsáveis por definir as regras de marcação, averiguar a idade legal para consentimento e cumprir a legislação aplicável.</p>
+        </div>
+        <div class="doc-section">
+            <h2>Use the tool</h2>
+            <p><a href="https://poliinternational.com/flash-sheet-builder/" target="_top">Open the Tattoo Flash Sheet Builder</a>. Everything runs in your browser; nothing you enter is sent anywhere.</p>
+        </div>
+    </div>
+</body>
+</html>
