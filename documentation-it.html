@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="it">
+<head><meta name="robots" content="noindex,nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tattoo Flash Sheet Builder Documentation | Poli International</title>
+    <meta name="description" content="Build a studio flash sheet from your own designs, with sizes and prices you set, print-ready or exported to CSV.">
+    <link rel="canonical" href="https://poliinternational.com/flash-sheet-builder/">
+    <style>
+        body { background: #0f0f0f; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; }
+        body.in-iframe .doc-hero h1 { display: none; }
+        * { box-sizing: border-box; }
+        .entry-content { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+        .doc-hero { background: linear-gradient(135deg, #3B82F6, #8B5CF6); padding: 3rem 2rem; text-align: center; border-radius: 0.75rem; margin-bottom: 2rem; }
+        .doc-hero h1 { font-size: 2.2rem; margin: 0 0 1rem; font-weight: 700; }
+        .doc-hero p { font-size: 1.15rem; color: #E0E7FF; margin: 0; }
+        .doc-hero .v2 { display: inline-block; margin-bottom: 1rem; padding: 0.2rem 0.75rem; border-radius: 999px; background: #10B981; color: #04241a; font-weight: 800; font-size: 0.8rem; letter-spacing: 0.08em; }
+        .doc-section { margin: 2rem 0; padding: 2rem; background: #1a1a1a; border-radius: 0.75rem; border-left: 4px solid #3B82F6; }
+        .doc-section h2 { color: #60A5FA; font-size: 1.7rem; margin: 0 0 1.25rem; font-weight: 600; }
+        .doc-section h3 { color: #A78BFA; font-size: 1.3rem; margin: 1.75rem 0 0.75rem; font-weight: 600; }
+        .doc-section p, .doc-section li { color: #ccc; line-height: 1.75; font-size: 1.02rem; }
+        .doc-section ul, .doc-section ol { padding-left: 1.5rem; }
+        .doc-section li { margin: 0.4rem 0; }
+        .doc-section code { background: #2a2a2a; padding: 0.1rem 0.35rem; border-radius: 0.25rem; font-size: 0.92em; }
+        .doc-section a { color: #60A5FA; font-weight: 600; }
+        .highlight-box { background: linear-gradient(135deg, #1E3A8A, #4C1D95); padding: 1.25rem 1.5rem; border-radius: 0.5rem; margin: 1.5rem 0; border-left: 4px solid #10B981; }
+        .highlight-box p { color: #E0E7FF; margin: 0; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        th, td { padding: 0.75rem; text-align: left; border: 1px solid #333; vertical-align: top; }
+        th { background: #2a2a2a; color: #60A5FA; }
+        td { color: #ccc; }
+        .doc-langs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1.5rem; font-size: 0.9rem; }
+        .doc-langs a, .doc-langs span { padding: 0.3rem 0.7rem; border-radius: 999px; border: 1px solid #333; text-decoration: none; }
+        .doc-langs a { color: #60A5FA; }
+        .doc-langs span { background: #1E3A8A; color: #E0E7FF; border-color: #1E3A8A; font-weight: 700; }
+    </style>
+</head>
+<body>
+<nav class="doc-langs" aria-label="Lingua della documentazione" style="display:flex;flex-wrap:wrap;gap:6px 14px;max-width:900px;margin:12px auto 0;padding:0 16px;font-size:14px;"><a lang="en" href="documentation.html">English</a><a lang="fr" href="documentation-fr.html">Français</a><a lang="de" href="documentation-de.html">Deutsch</a><span lang="it">Italiano</span><a lang="es" href="documentation-es.html">Español</a><a lang="nl" href="documentation-nl.html">Nederlands</a><a lang="pt" href="documentation-pt.html">Português</a><a lang="th" href="documentation-th.html">ไทย</a></nav>
+<script>if (window.self !== window.top) document.body.classList.add('in-iframe');</script>
+    <div class="entry-content">
+        <div class="doc-hero">
+            <span class="v2">V2</span>
+            <h1>Tattoo Flash Sheet Builder</h1>
+            <p>Build a studio flash sheet from your own designs, with sizes and prices you set, print-ready or exported to CSV.</p>
+        </div>
+        <p>Il Tattoo Flash Sheet Builder è uno strumento di impaginazione e tariffazione integrato nel browser che consente a tatuatori e gestori di studio di trasformare disegni flash, prezzi e dettagli di prenotazione in tavole stampabili e listini prezzi da banco pronti per la clientela.</p>
+        <div class="doc-section">
+        <h2>A cosa serve</h2>
+        <p>Questo strumento impagina i disegni flash per tatuaggi in tavole pronte per la stampa, ideali per l'esposizione in studio, i raccoglitori da banco e le consultazioni alla reception. I tatuatori possono impostare prezzi, acconti, indicazioni sulle dimensioni, tempi stimati di seduta e stati di disponibilità senza dover utilizzare complessi software di grafica. Gli studi possono così ottenere una griglia illustrata pulita per i raccoglitori in sala d'attesa e un listino prezzi dettagliato per il personale di segreteria.</p>
+        </div>
+        <div class="doc-section">
+        <h2>A chi è rivolto</h2>
+        <p>Questo strumento è pensato per tatuatori indipendenti, resident artist in studio, guest artist in trasferta e gestori di studi di tatuaggi. Risulta particolarmente utile per organizzare i raccoglitori dello shop, gestire giornate a tema (flash day) e promozioni in cui servono rapidità di presentazione e massima trasparenza sui prezzi.</p>
+        </div>
+        <div class="doc-section">
+        <h2>Come usarlo</h2>
+        <h3>Controllo dello spazio di archiviazione del browser</h3>
+        <ol>
+        <li>Monitora lo spazio di memoria locale tramite l'indicatore <code>Limite memoria del browser</code> presente nella parte superiore della pagina.</li>
+        <li>Se lo spazio supera il 75%, presta attenzione all'avviso : <code>La memoria del browser è occupata per oltre il 75%. Esporta un backup o rimuovi le tavole non utilizzate.</code>.</li>
+        <li>Esporta un backup prima di caricare fotografie o scansioni ad alta risoluzione per evitare di esaurire la memoria del browser.</li>
+        </ol>
+        <h3>Gestione delle tavole e dei backup</h3>
+        <ol>
+        <li>Seleziona una tavola nel menu a tendina <code>Tavola attiva:</code> per passare da un progetto all'altro.</li>
+        <li>Fai clic su <code>+ Nuova tavola</code> per creare una nuova tavola, su <code>Duplica</code> per clonarla o su <code>Elimina</code> per rimuoverla.</li>
+        <li>Fai clic su <code>Esporta backup</code> per scaricare un file JSON sul dispositivo, oppure su <code>Importa backup</code> per ripristinare i tuoi dati.</li>
+        </ol>
+        <h3>Configurazione dei parametri della tavola e identità dello studio</h3>
+        <ol>
+        <li>Apri la sezione <code>Impostazioni e identità della tavola</code> per aggiornare le informazioni della tua tavola.</li>
+        <li>Inserisci <code>Titolo della tavola</code>, <code>Nome artista o studio</code>, <code>Contatto / Instagram</code> e <code>Data della tavola</code>.</li>
+        <li>Seleziona la tua <code>Valuta</code>, imposta <code>Formato carta</code> su <code>A4 (210 × 297 mm)</code> oppure <code>US Letter (8,5 × 11 pollici)</code>, e imposta <code>Colonne della griglia</code> su <code>2 colonne</code>, <code>3 colonne</code> o <code>4 colonne</code>.</li>
+        </ol>
+        <h3>Aggiunta e modifica dei design flash</h3>
+        <ol>
+        <li>Nella sezione <code>Aggiungi design flash</code>, inserisci l'immagine sotto <code>Disegno del flash (Facoltativo - rimane solo sul dispositivo)</code> utilizzando l'area <code>Fai clic o trascina qui la foto del design</code>, oppure premi <code>Modifica</code> o <code>Rimuovi</code>.</li>
+        <li>Inserisci <code>Nome del design *</code>, scegli <code>Stile</code> e <code>Dimensioni</code>, quindi compila <code>Prezzo</code> e <code>Acconto</code> (oppure lascia vuoto per prezzo su richiesta).</li>
+        <li>Specifica <code>Durata stimata seduta</code>, quindi imposta <code>Stato di disponibilità</code> su <code>Disponibile (Pezzo unico non prenotato)</code>, <code>Prenotato (Pezzo unico assegnato)</code> o <code>Ripetibile (Tatuaggio replicabile)</code>.</li>
+        <li>Spunta <code>Pezzo centrale: occupa 2 colonne della griglia</code> per i soggetti di grandi dimensioni, e annota eventuali dettagli in <code>Note / Posizionamento</code>.</li>
+        <li>Fai clic su <code>Aggiungi alla tavola</code> per salvare il disegno, oppure su <code>Aggiorna design</code> e <code>Annulla modifica</code> se sei in fase di modifica.</li>
+        </ol>
+        <h3>Revisione dei design nella vista tabella</h3>
+        <ol>
+        <li>Sotto la voce <code>Design della tavola</code>, seleziona <code>Vista tabella</code> per esaminare l'elenco completo dei pezzi.</li>
+        <li>Controlla la barra riepilogativa per verificare conteggi, pezzi disponibili e valore economico totale della tavola.</li>
+        <li>Fai clic su <code>Prenota</code> in qualsiasi riga per contrassegnare un pezzo come già assegnato, oppure su <code>Rendi disponibile</code> per rimetterlo a disposizione.</li>
+        <li>Fai clic su <code>Modifica</code> per cambiare le informazioni di un flash, su <code>Elimina</code> per toglierlo dalla tavola, o su <code>Cancella tutto</code> per azzerare l'intera scheda.</li>
+        </ol>
+        <h3>Disposizione del layout con trascina e rilascia</h3>
+        <ol>
+        <li>Seleziona la scheda <code>Trascina per disporre</code> sopra l'elenco dei design.</li>
+        <li>Segui le istruzioni mostrate a schermo : <code>Trascina le schede per organizzare la disposizione prima della stampa.</code>.</li>
+        <li>Trascina le schede tramite l'apposita maniglia per posizionare in modo armonioso i pezzi principali e quelli secondari.</li>
+        </ol>
+        <h3>Esportazione dei dati per fogli di calcolo</h3>
+        <ol>
+        <li>Fai clic su <code>Esporta CSV</code> sopra l'elenco dei design.</li>
+        <li>Salva il file CSV sul tuo computer.</li>
+        <li>Apri il file con Excel o qualsiasi altro software di fogli di calcolo per analizzare l'inventario, verificare gli acconti o conteggiare i ricavi.</li>
+        </ol>
+        <h3>Stampa delle tavole flash e dei listini prezzi da banco</h3>
+        <ol>
+        <li>Fai clic su <code>Anteprima e stampa tavola</code> per visualizzare l'anteprima della griglia grafica.</li>
+        <li>In alternativa, fai clic su <code>Stampa listino prezzi da banco</code> per ottenere una tabella riassuntiva riga per riga.</li>
+        <li>Nella finestra modale <code>Stampa ed esportazione PDF</code>, seleziona <code>Tavola flash</code> o <code>Listino prezzi da banco</code>.</li>
+        <li>Fai clic su <code>Stampa / Salva in PDF</code> per avviare la finestra di stampa del sistema operativo.</li>
+        <li>Fai clic su <code>Chiudi</code> per terminare l'anteprima.</li>
+        </ol>
+        </div>
+        <div class="doc-section">
+        <h2>Cosa non fa</h2>
+        <p>Questo strumento è dedicato esclusivamente all'impaginazione e alla creazione di schede tariffarie nel browser. Esclude volutamente le funzioni amministrative complesse gestite da altre piattaforme dedicate :</p>
+        <ul>
+        <li>Non calcola i costi orari di gestione della postazione né fornisce benchmark tariffari. Per analizzare i costi di struttura dello studio e confrontare le tariffe della propria area geografica, utilizza lo <a href="https://poliinternational.com/studio-pricing-benchmark/" target="_top">Studio Pricing Benchmark</a>.</li>
+        <li>Non genera liberatorie legali di consenso informato, questionari anamnestici o firme digitali. Per redigere moduli di consenso a norma di legge e schede di accettazione cliente, utilizza il <a href="https://poliinternational.com/form-builder/" target="_top">Consent Form Builder</a>.</li>
+        <li>Non gestisce transazioni con carta di credito né incassa acconti online. Gli acconti vengono riscossi di persona o mediante il POS dello studio.</li>
+        <li>Non funge da calendario di prenotazione online e non invia notifiche automatiche di appuntamento.</li>
+        </ul>
+        </div>
+        <div class="doc-section">
+        <h2>Dove risiedono i tuoi dati</h2>
+        <p>Tutti i disegni flash, i prezzi, le note e le foto compresse rimangono memorizzati esclusivamente all'interno del browser web sul tuo computer o smartphone. Nessun disegno, account social o importo economico viene trasmesso attraverso la rete né salvato su server remoti.</p>
+        <p>La cancellazione dei cookie e dei dati di navigazione, il ripristino della cronologia o l'utilizzo di finestre in modalità anonima cancellano definitivamente le tavole salvate. Esporta regolarmente un file di backup per proteggere i tuoi progetti.</p>
+        <p>Il file di backup è un documento JSON che include :</p>
+        <ul>
+        <li>Parametri della tavola (titoli, nomi degli artisti, contatti Instagram, date, valute, formati carta e numero di colonne).</li>
+        <li>Voci dei design (nomi, stili, misure, prezzi, acconti, tempi previsti, stati di disponibilità, estensione nelle colonne e note).</li>
+        <li>Dati grafici compressi per le immagini collegate a ciascun flash.</li>
+        </ul>
+        </div>
+        <div class="doc-section">
+        <h2>Stampa ed esportazione</h2>
+        <p>Il formato di stampa è ottimizzato specificamente per l'impiego operativo in studio :</p>
+        <ul>
+        <li>Formato carta : assicurati di impostare la stampante sullo stesso formato scelto nell'applicazione (A4 o US Letter).</li>
+        <li>Margini di stampa : l'anteprima evidenzia una cornice tratteggiata che delimita la zona di sicurezza di 12,7 mm (0,5 pollici). Nelle impostazioni di stampa scegli margini predefiniti o minimi.</li>
+        <li>Intestazioni e piè di pagina : deseleziona la voce "Intestazioni e piè di pagina" nella finestra di dialogo per non stampare link URL e orari lungo i bordi.</li>
+        <li>Grafica di sfondo : seleziona obbligatoriamente "Grafica di sfondo" nelle opzioni di stampa affinché badge di stato, bordi delle tabelle e ombreggiature vengano stampati fedelmente.</li>
+        <li>Stampa monocromatica : i layout impiegano contrasti netti e linee pulite, ideali per stampanti laser in bianco e nero, fotocopiatrici o termocopiatrici per stencil.</li>
+        </ul>
+        </div>
+        <div class="doc-section">
+        <h2>Domande e risposte</h2>
+        <h3>Come stampare una tavola di flash tattoo in formato A4 o US Letter?</h3>
+        <p>Seleziona il formato carta nella scheda delle impostazioni prima di aprire la schermata di stampa. Quando avvii la stampa, verifica che il formato nel driver di stampa corrisponda a quello impostato nello strumento e deseleziona intestazioni e piè di pagina per ottenere una cornice pulita.</p>
+        <h3>È possibile contrassegnare i design flash come prenotati quando un cliente li blocca?</h3>
+        <p>Puoi aggiornare la disponibilità direttamente nella tabella dei design facendo clic sul pulsante di prenotazione nella riga corrispondente. Sulla tavola stampata comparirà un apposito badge che segnala ai clienti che il disegno è già stato assegnato. Se l'appuntamento viene disdetto, basta premere il pulsante per rimettere il pezzo a disposizione.</p>
+        <h3>Dove vengono memorizzati i disegni e le foto dei flash caricati?</h3>
+        <p>Tutte le fotografie e le scansioni delle tavole rimangono conservate nello storage locale del tuo browser web. Le immagini vengono ridimensionate, compresse e private dei metadati della fotocamera su una tela invisibile prima del salvataggio. Nessun file viene inviato a Poli International né viaggia su internet.</p>
+        <h3>Come fare in modo che un design flash principale occupi due colonne?</h3>
+        <p>Spunta la casella del pezzo centrale nel modulo di inserimento prima di salvare o aggiornare il disegno. In una griglia a due o tre colonne, la scheda si estende automaticamente su due riquadri per dare risalto ai lavori più importanti. Puoi poi usare la vista trascina e disponi per posizionare gli altri flash tutt'intorno.</p>
+        <h3>È possibile usare valute diverse per guest spot o convention all'estero?</h3>
+        <p>Puoi selezionare una valuta diversa nel menu a tendina delle impostazioni ogni volta che lavori all'estero. Il simbolo monetario si aggiorna all'istante su tutti i prezzi, acconti e riepiloghi senza modificare le cifre inserite. In questo modo è semplicissimo preparare tavole pronte per convention internazionali.</p>
+        <h3>Qual è la differenza tra la tavola flash e il listino prezzi da banco?</h3>
+        <p>La tavola flash è una griglia visiva illustrata pensata per essere mostrata ai clienti nei raccoglitori o appesa alle pareti dello studio. Il listino prezzi da banco è una tabella di consultazione compatta progettata per il personale alla reception, utile per controllare al volo prezzi, acconti e tempi di seduta. Puoi passare liberamente dall'uno all'altro nella finestra di stampa.</p>
+        </div>
+        <div class="doc-section">
+        <h2>Limiti</h2>
+        <p>Il Tattoo Flash Sheet Builder non ha la funzione di stimare la difficoltà tecnica di un tatuaggio, la complessità dell'area anatomica o la durata effettiva della seduta. È sempre compito del tatuatore valutare il disegno, la zona di applicazione e la pelle del cliente per concordare tempi e acconti corretti.</p>
+        <p>Questo strumento non applica né gestisce condizioni legali di rimborso, politiche di cancellazione o requisiti sull'età minima del cliente. I titolari di studio e i tatuatori restano gli unici responsabili della definizione delle proprie politiche di prenotazione, della verifica dell'età legale per il consenso e del rispetto delle normative vigenti.</p>
+        </div>
+        <div class="doc-section">
+            <h2>Use the tool</h2>
+            <p><a href="https://poliinternational.com/flash-sheet-builder/" target="_top">Open the Tattoo Flash Sheet Builder</a>. Everything runs in your browser; nothing you enter is sent anywhere.</p>
+        </div>
+    </div>
+</body>
+</html>
