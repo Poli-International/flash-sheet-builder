@@ -479,7 +479,7 @@
         </div>
         <div class="arrange-card-price">${d.price ? fmtPrice(d.price, curr) : window.i18n.t('print.poa')}</div>
         <div class="arrange-card-actions">
-          <div class="drag-handle">☰ ${window.i18n.t('list.dragHandle')}</div>
+          <div class="drag-handle"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-menu></use></svg> ${window.i18n.t('list.dragHandle')}</div>
           <div class="card-action-btns">
             <button class="small-btn edit-btn" data-id="${d.id}">${window.i18n.t('actions.edit')}</button>
             <button class="small-btn status-btn" data-id="${d.id}">${
